@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0; padding: 0;}
+    .전체{background-color: gray;
+         width: 800px; margin: auto;}
+
+    .블럭요소{background-color: khaki;}
+    .블럭요소2{background-color: lightseagreen;}
+    .블럭요소2 .인라인요소{
+        background-color: steelblue;
+        width: 500px;
+    }
+    .블럭요소2 .인라인요소2{
+        background-color: rgb(39, 65, 233);
+        display: block;                           /* display: block; 은 인라인 요소를 블럭요소로 만들어줌 */
+        text-align: center;
+    }
+    .블럭요소2 .인라인요소3{
+        background-color: rgb(180, 70, 149);
+        text-align: center;
+    }
+    .블럭요소2 .인라인요소3:before{content: "b";}   /* before 와 after 는 같은 역할을 함(인라인 요소) */
+    .블럭요소2 .인라인요소3:after{content: "a";display: block;}    /* clear:both; 는 after 뒤에만 온다 */
+       
+    </style>
+</head>
+
+<body>
+    <div class="전체">
+        <div class="블럭요소">블럭요소(부모 - 전체(class명)의 넓이를 모두 채움)</div>
+        <div class="블럭요소2">
+            <span class="인라인요소">인라인요소[공간(넓이,높이)의 개념이 없음]</span>  <!-- 인라인 요소는 옆에 다른 애를 세울 수 있음. 자기가 가진 글자만큼의 넓이는 인식함. --> 
+            <span class="인라인요소2">인라인요소2</span>
+            <span class="인라인요소3">인라인요소3</span>  
+        </div>
+    </div>
+
+</body>
+</html>
